@@ -73,16 +73,19 @@ public class ProgramTasks {
 
 		// =====================================================================================================
 
-		// System.out.println("\n\n" + "Program No : 6"); // Convert String to Integer
-		// and print in reverse order
-		// System.out.println("===============");
-		//
-		// String s1 = "9876";
-		// int n = Integer.parseInt(s1);
-		// for (int i = n; i >= 0; i++) {
-		// char ch = s1.charAt(i);
-		//
-		// }
+		 System.out.println("\n\n" + "Program No : 6"); // Convert String to Integer and print in reverse order
+		 System.out.println("===============");
+		
+		String s4 = "9876";
+		String s3 = "";
+		for (int i = s4.length() - 1; i >= 0; i--) {
+			char ch = s4.charAt(i);
+			s3 = s3 + ch;
+		}
+		int p = Integer.parseInt(s3);
+		System.out.println("Input : " + s4);
+		System.out.println("Convert String to Integer and print in reverse order : " + p);
+		 
 
 		// =====================================================================================================
 
