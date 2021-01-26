@@ -1,5 +1,7 @@
 package org.newproj;
 
+import java.util.Arrays;
+
 public class ProgramTasks {
 
 	public static void main(String[] args) {
@@ -73,9 +75,9 @@ public class ProgramTasks {
 
 		// =====================================================================================================
 
-		 System.out.println("\n\n" + "Program No : 6"); // Convert String to Integer and print in reverse order
-		 System.out.println("===============");
-		
+		System.out.println("\n\n" + "Program No : 6"); // Convert String to Integer and print in reverse order
+		System.out.println("===============");
+
 		String s4 = "9876";
 		String s3 = "";
 		for (int i = s4.length() - 1; i >= 0; i--) {
@@ -85,7 +87,6 @@ public class ProgramTasks {
 		int p = Integer.parseInt(s3);
 		System.out.println("Input : " + s4);
 		System.out.println("Convert String to Integer and print in reverse order : " + p);
-		 
 
 		// =====================================================================================================
 
@@ -237,24 +238,149 @@ public class ProgramTasks {
 			rev2 = rev2 + " " + re;
 		}
 		System.out.println("Input : Welcome to java class");
-		System.out.println("Expected Output :"+rev2);
-		
+		System.out.println("Expected Output :" + rev2);
+
 		// =====================================================================================================
 
 		System.out.println("\n\n" + "Program No : 16"); // Expected Output : "Welcome To Java Class"
 		System.out.println("================");
-		
+
 		String w1 = "welcome to java class";
 		String res1 = " ";
 
 		String[] spli = wel.split(" ");
 		for (String wordRev : spli) {
 
-				char ch = wordRev.charAt(0);
-				res1 = res1 + Character.toUpperCase(ch) + wordRev.substring(1) + " "; 
+			char ch = wordRev.charAt(0);
+			res1 = res1 + Character.toUpperCase(ch) + wordRev.substring(1) + " ";
 		}
 		System.out.println("Input : welcome to java class");
-		System.out.println("Expected Output :"+res1);
+		System.out.println("Expected Output :" + res1);
+
+		// =====================================================================================================
+
+		System.out.println("\n\n" + "Program No : 17"); // Factorial of a number
+		System.out.println("================");
+
+		int numb = 5, res2 = 1;
+
+		for (int i = numb; i >= 1; i--) {
+			res2 = res2 * i;
+		}
+		System.out.println("Factorial of a number : " + res2);
+
+		// =====================================================================================================
+
+		System.out.println("\n\n" + "Program No : 18"); // Fibbonacci Series
+		System.out.println("================");
+
+		int numb1 = 5, a1 = 0, b = 1;
+
+		System.out.println(a1);
+		System.out.println(b);
+		for (int i = numb1; i >= 1; i--) {
+			int c = a1 + b;
+			System.out.println(c);
+			a1 = b;
+			b = c;
+		}
+
+		// =====================================================================================================
+
+		System.out.println("\n\n" + "Program No : 19"); // Swapping using temporary or 3rd variables
+		System.out.println("================");
+
+		int a2 = 10, b1 = 20;
+		System.out.println("Before Swapping :-");
+		System.out.println(a2);
+		System.out.println(b1);
+		int temp = a2;
+		a2 = b1;
+		b1 = temp;
+		System.out.println("After Swapping :-");
+		System.out.println(a2);
+		System.out.println(b1);
+
+		// =====================================================================================================
+
+		System.out.println("\n\n" + "Program No : 20"); // Swapping without using temporary or 3rd variables
+		System.out.println("================");
+
+		int a3 = 10, b2 = 20;
+		System.out.println("Before Swapping :-");
+		System.out.println(a3);
+		System.out.println(b2);
+
+		a3 = a3 + b2; // 30
+		b2 = a3 - b2; // 10
+		a3 = a3 - b2; // 20
+
+		System.out.println("After Swapping :-");
+		System.out.println(a3);
+		System.out.println(b2);
+
+		// =====================================================================================================
+
+		System.out.println("\n\n" + "Program No : 21"); // Sorting the elements using array
+		System.out.println("================");
+
+		int[] a4 = { 10, 90, 80, 30, 50, 15 };
+
+		Arrays.sort(a4);
+		for (int i : a4) {
+			System.out.println(i);
+		}
+		System.out.println("Min element in array : " + a4[0]);
+		System.out.println("Max element in array : " + a4[a4.length - 1]);
+
+		// =====================================================================================================
+
+		System.out.println("\n\n" + "Program No : 22"); // Sorting the array
+		System.out.println("================");
+
+		int[] a5 = { 1, 9, 8, 4, 7 };
+
+		for (int i = 0; i < a5.length; i++) {
+
+			for (int j = i + 1; j < a5.length; j++) {
+
+				if (a5[i] > a5[j]) {
+
+					int temp1 = a5[i];
+					a5[i] = a5[j];
+					a5[j] = temp1;
+				}
+			}
+		}
+		System.out.println("Sorted the array in asending order :-");
+		for (int i : a5) {
+			System.out.print(i+"\t");
+		}
+		
+		// =====================================================================================================
+		
+		System.out.println("\n\n" + "Program No : 23"); // Sorting the array in descending order
+		System.out.println("================");
+
+		int[] a6 = { 1, 9, 8, 4, 7 };
+
+		for (int i = 0; i < a6.length; i++) {
+
+			for (int j = i + 1; j < a6.length; j++) {
+
+				if (a6[i] < a6[j]) {
+
+					int temp1 = a6[i];
+					a6[i] = a6[j];
+					a6[j] = temp1;
+				}
+			}
+		}
+		System.out.println("Sorted the array in descending order :-");
+		for (int i : a6) {
+			System.out.print(i+"\t");
+		}
+
 	}
 
 }
