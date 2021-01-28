@@ -1,6 +1,11 @@
 package org.newproj;
 
 import java.util.Arrays;
+import java.util.LinkedHashMap;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import javax.swing.text.html.HTMLDocument.HTMLReader.SpecialAction;
 
 public class ProgramTasks {
 
@@ -354,11 +359,11 @@ public class ProgramTasks {
 		}
 		System.out.println("Sorted the array in asending order :-");
 		for (int i : a5) {
-			System.out.print(i+"\t");
+			System.out.print(i + "\t");
 		}
-		
+
 		// =====================================================================================================
-		
+
 		System.out.println("\n\n" + "Program No : 23"); // Sorting the array in descending order
 		System.out.println("================");
 
@@ -378,12 +383,183 @@ public class ProgramTasks {
 		}
 		System.out.println("Sorted the array in descending order :-");
 		for (int i : a6) {
-			System.out.print(i+"\t");
+			System.out.print(i + "\t");
+		}
+
+		// =====================================================================================================
+
+		System.out.println("\n\n" + "Program No : 24"); // (ASCII)to print the characters in ascending order from string
+		System.out.println("================");
+
+		String nm = "java class";
+		char[] ch1 = nm.toCharArray();
+
+		for (int i = 0; i < ch1.length; i++) {
+
+			for (int j = 0; j < ch1.length; j++) {
+
+				if (ch1[i] < ch1[j]) {
+					char temp1 = ch1[i];
+					ch1[i] = ch1[j];
+					ch1[j] = temp1;
+
+				}
+			}
+		}
+		for (char c : ch1) {
+			System.out.print(c);
+		}
+
+		// =====================================================================================================
+
+		System.out.println("\n\n" + "Program No : 25 --> Separate the string by upper , lower , number , special"); // Separate
+																													// the
+																													// string
+																													// by
+																													// upper
+																													// ,
+																													// lower
+																													// ,
+																													// number
+																													// ,
+																													// special
+		System.out.println("================");
+
+		String name = "Autom@tiont & Te$ter 2021";
+
+		String upper = "", lower = "", nums = "", specs = "";
+
+		int upperCount = 0, lowerCount = 0, numsCount = 0, specsCount = 0;
+
+		char[] ch = name.toCharArray();
+
+		for (char c : ch) {
+			// 'A' 'Z'
+			if (c >= 65 && c <= 90) { // Character.isUpperCase(c)
+				upperCount++;
+				upper = upper + c;
+			}
+			// 'a' 'z'
+			else if (c >= 97 && c <= 122) { // Character.toLowerCase(c)
+				lowerCount++;
+				lower = lower + c;
+			}
+			// '0' '9'
+			else if (c >= 48 && c <= 57) { // Character.isDigit(c)
+				numsCount++;
+				nums = nums + c;
+			}
+			// Special Characters
+			else {
+				specsCount++;
+				specs = specs + c;
+			}
+		}
+		System.out.println("Upper Case : " + upper + " , Upper Count : " + upperCount);
+		System.out.println("Lower Case : " + lower + " , Lower Count : " + lowerCount);
+		System.out.println("Numbers : " + nums + " , Numbers Count : " + numsCount);
+		System.out.println("Special Characters : " + specs + " , Special Characters Count : " + specsCount);
+
+		// =====================================================================================================
+
+		System.out.println("\n\n" + "Program No : 26 --> Find Vowels and Vowels Count in a String"); // Find Vowels and
+																										// Vowels Count
+																										// // in a
+																										// String
+		System.out.println("================");
+
+		String name1 = "Autom@tiont & Te$ter 2021";
+
+		String vowels = "", consonent = "";
+
+		int vowelsCount = 0, consonentCount = 0;
+
+		String uc = name1.toUpperCase();
+
+		for (char c : ch) {
+			// if you want to restrict the numbers and special characters to use if
+			// condition
+			// if (c>=65&&c<=122) {
+
+			if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' || c == 'A' || c == 'E' || c == 'I' || c == 'O'
+					|| c == 'U') {
+				vowelsCount++;
+				vowels = vowels + c;
+			} else {
+				consonentCount++;
+				consonent = consonent + c;
+				// }
+			}
+		}
+		System.out.println("Vowels presented in a string : " + vowels);
+		System.out.println("Vowels Count : " + vowelsCount);
+		System.out.println("Consonents presented in a String : " + consonent);
+		System.out.println("Consonent Count : " + consonentCount);
+
+		// =====================================================================================================
+
+		System.out.println("\n\n" + "Program No : 27 --> Occurance Count & Find Duplicates"); // Occurance Count & Find
+																								// Duplicates
+		System.out.println("================");
+
+		String str = "java class";
+		String str1 = str.replaceAll(" ", "");
+
+		LinkedHashMap<Character, Integer> mp = new LinkedHashMap<Character, Integer>();
+		for (int i = 0; i < str.length(); i++) {
+			char x = str.charAt(i);
+			if (mp.containsKey(x)) {
+				Integer cou = mp.get(x);
+				mp.put(x, cou += 1);
+			} else {
+				mp.put(x, 1);
+			}
+		}
+		System.out.println(mp);
+		Set<Entry<Character, Integer>> ent = mp.entrySet();
+		for (Entry<Character, Integer> entry : ent) {
+			if (entry.getValue() > 1) {
+				System.out.println("Duplicates : "+entry.getKey());
+			}
+		}
+
+		// =====================================================================================================
+
+		System.out.println("\n\n" + "Program No : 28"); 																						// Duplicates
+		System.out.println("================");
+		
+		
+		for (int row = 1; row <= 5; row++) {
+			for (int column = 1; column <= row; column++) {
+				System.out.print(" *");
+			}
+			System.out.println();
 		}
 		
 		// =====================================================================================================
 
-
+		System.out.println("\n\n" + "Program No : 29"); // Duplicates
+		System.out.println("================");
+				
+		for (int i = 1; i <= 5; i++) {
+			
+			for (int j = 5-i; j >= 1; j--) {
+				System.out.print(" ");
+			}
+			
+			for (int j = 1; j <= i; j++) {
+				System.out.print(" *");
+			}
+			System.out.println();
+			
+		}
+		
+		
+		
+		
+		
+		
+		
 	}
 
 }
